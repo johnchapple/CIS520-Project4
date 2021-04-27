@@ -82,8 +82,6 @@ main(int argc, char* argv[])
 	int numtasks, rank;
 	MPI_Status Status;
 
-    numtasks = 2;
-
     clock_t begin = clock();//p4
 
 
@@ -96,8 +94,6 @@ main(int argc, char* argv[])
 
     MPI_Comm_size(MPI_COMM_WORLD,&numtasks);
     MPI_Comm_rank(MPI_COMM_WORLD,&rank);
-
-    numtasks = 2;
 
 	NUM_THREADS = numtasks;
 	printf("size = %d rank = %d\n", numtasks, rank);
