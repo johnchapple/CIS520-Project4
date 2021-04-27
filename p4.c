@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define NUM_THREADS 4
+#define NUM_THREADS 8
 
 #define ARRAY_SIZE 1000 //Numeber of lines
 #define STRING_SIZE 2001 //size of lines
@@ -18,6 +18,7 @@ void init_arrays()
   FILE *fd;
 
    fd = fopen( "/homes/dan/625/wiki_dump.txt", "r" );
+   Console.printf("")
    for ( i = 0; i < ARRAY_SIZE; i++ )  {
       err = fscanf( fd, "%[^\n]\n", line_array[i]);
       if( err == EOF ) break;
