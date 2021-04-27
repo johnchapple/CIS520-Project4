@@ -4,7 +4,7 @@
 #include <string.h>
 #include <time.h>
 
-#define NUM_THREADS 8
+#define NUM_THREADS 1
 
 #define ARRAY_SIZE 1000 //Numeber of lines
 #define STRING_SIZE 2001 //size of lines
