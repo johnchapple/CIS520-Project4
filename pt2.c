@@ -97,6 +97,7 @@ main(int argc, char* argv[])
         MPI_Comm_size(MPI_COMM_WORLD,&numtasks);
         MPI_Comm_rank(MPI_COMM_WORLD,&rank);
 
+    numtasks = 2;
 	NUM_THREADS = numtasks;
 	printf("size = %d rank = %d\n", numtasks, rank);
 	fflush(stdout);
