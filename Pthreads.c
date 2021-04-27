@@ -29,6 +29,22 @@ float find_avg(char* line, int nchars) {
 }
 
 //p4 start
+void init_arrays()
+{
+  int i, j, err;
+  FILE *fd;
+
+   fd = fopen( "/homes/dan/625/wiki_dump.txt", "r" );
+   for ( i = 0; i < ARRAY_SIZE; i++ )  {
+      err = fscanf( fd, "%[^\n]\n", line_array[i]);
+      if( err == EOF ) break;
+   }
+
+  for ( i = 0; i < ARRAY_SIZE; i++ ) {
+  	line_avg[i] = 0.0;
+  }
+}
+
 void *count_array(void *myID)
 {
   char theChar;
@@ -81,22 +97,9 @@ int main()
 
    pthread_attr_init(&attr);
 	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
-   //p4 end
-   float  charsum=0.0;
-   int nchars = 0;
-   FILE *fd;
-   char line = (char) malloc( 2001 ); // no lines larger than 2000 chars
 
-   // Read in the lines from the data file
+   init_arrays();
 
-   fd = fopen( "/homes/dan/625/wiki_dump.txt", "r" );
-   for ( i = 0; i < maxlines; i++ )  {
-      err = fscanf( fd, "%[^\n]\n", line);
-      if( err == EOF ) break;
-      nchars = strlen( line );
-      printf("%d: %.1f\n", nlines, find_avg(line, nchars));
-      nlines++;
-   }
 
    //p4 test start
    for (i = 0; i < NUM_THREADS; i++ ) {
