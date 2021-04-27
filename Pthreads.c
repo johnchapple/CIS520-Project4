@@ -64,7 +64,7 @@ void *count_array(void *myID)
      local_line_avg[i]=find_avg(line_array[i], strlen(line_array[i]));
   }
 					// sum up the partial counts into the global arrays
-  pthread_mutex_lock (&mutexsum);
+  //pthread_mutex_lock (&mutexsum);//change 3.18pm 
    for ( i = 0; i < ARRAY_SIZE; i++ ) {
       line_avg[i] += local_line_avg[i];
    }
