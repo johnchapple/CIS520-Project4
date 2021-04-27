@@ -88,13 +88,16 @@ main(int argc, char* argv[])
 
 
 	rc = MPI_Init(&argc,&argv);
-	if (rc != MPI_SUCCESS) {
-	  printf ("Error starting MPI program. Terminating.\n");
+	if (rc != MPI_SUCCESS) 
+    {
+	        printf ("Error starting MPI program. Terminating.\n");
           MPI_Abort(MPI_COMM_WORLD, rc);
-        }
+    }
 
     MPI_Comm_size(MPI_COMM_WORLD,&numtasks);
     MPI_Comm_rank(MPI_COMM_WORLD,&rank);
+
+    numtasks = 2;
 
 	NUM_THREADS = numtasks;
 	printf("size = %d rank = %d\n", numtasks, rank);
@@ -116,7 +119,6 @@ main(int argc, char* argv[])
 	}
 
     //print the results:
-    print_results(line_avg);
     clock_t end = clock();
 	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
 	printf("Main: program completed. Time spent = %d. Exiting.\n", time_spent);
