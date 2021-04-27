@@ -46,7 +46,6 @@ float find_avg(char* line, int nchars) {
 
 void *count_array(void *rank)
 {
-  printf("count_array")
   char theChar;
   int i, j, charLoc;
   int myID =  *((int*) rank);
@@ -94,10 +93,9 @@ main(int argc, char* argv[])
           MPI_Abort(MPI_COMM_WORLD, rc);
         }
 
-        MPI_Comm_size(MPI_COMM_WORLD,&numtasks);
-        MPI_Comm_rank(MPI_COMM_WORLD,&rank);
+    MPI_Comm_size(MPI_COMM_WORLD,&numtasks);
+    MPI_Comm_rank(MPI_COMM_WORLD,&rank);
 
-    numtasks = 2;
 	NUM_THREADS = numtasks;
 	printf("size = %d rank = %d\n", numtasks, rank);
 	fflush(stdout);
@@ -118,6 +116,7 @@ main(int argc, char* argv[])
 	}
 
     //print the results:
+    print_results(line_avg);
     clock_t end = clock();
 	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
 	printf("Main: program completed. Time spent = %d. Exiting.\n", time_spent);
