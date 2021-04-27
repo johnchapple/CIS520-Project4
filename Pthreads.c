@@ -66,10 +66,10 @@ void *count_array(void *myID)
 					// sum up the partial counts into the global arrays
   pthread_mutex_lock (&mutexsum);
    for ( i = 0; i < ARRAY_SIZE; i++ ) {
-      Console.printf("local_line_avg[i] before: %f", local_line_avg[i])
-      Console.printf("line_avg[i] before: %f", line_avg[i])
+      Console.printf("local_line_avg[i] before: %f", local_line_avg[i]);
+      Console.printf("line_avg[i] before: %f", line_avg[i]);
       line_avg[i] += local_line_avg[i];
-      Console.printf("line_avg[i] after: %f", line_avg[i])
+      Console.printf("line_avg[i] after: %f", line_avg[i]);
    }
   pthread_mutex_unlock (&mutexsum);
 
