@@ -5,9 +5,8 @@
 
 //p4 start
 #define NUM_THREADS 4
-#define ARRAY_SIZE 2000000
-#define STRING_SIZE 16
-#define ALPHABET_SIZE 26
+#define ARRAY_SIZE 1000
+#define STRING_SIZE 2001 // no lines larger than 2000 chars
 pthread_mutex_t mutexsum;
 
 char line_array[ARRAY_SIZE][STRING_SIZE];
@@ -89,7 +88,7 @@ int main()
 {
    clock_t begin = clock();//p4
 
-   int nlines = 0, maxlines = 1000000;
+   //int nlines = 0, maxlines = 1000000;
    int i, err, rc;
    //p4 start
 	pthread_t threads[NUM_THREADS];
