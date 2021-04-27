@@ -82,7 +82,7 @@ main(int argc, char* argv[])
 	int numtasks, rank;
 	MPI_Status Status;
 
-    numtasks = 4;
+    numtasks = 2;
 
     clock_t begin = clock();//p4
 
