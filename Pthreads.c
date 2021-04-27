@@ -89,7 +89,7 @@ int main()
    clock_t begin = clock();//p4
 
    //int nlines = 0, maxlines = 1000000;
-   int i, err, rc;
+   int i, j, err, rc;
    //p4 start
 	pthread_t threads[NUM_THREADS];
 	pthread_attr_t attr;
@@ -109,8 +109,8 @@ int main()
       }
 	}
 
-   for (int i = 0; i < NUM_THREADS;; i++)
-       pthread_join(threads[i], NULL);
+   for (j = 0; j < NUM_THREADS; j++)
+       pthread_join(threads[j], NULL);
    
    print_results(line_avg);
 
