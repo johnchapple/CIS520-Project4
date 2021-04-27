@@ -87,6 +87,8 @@ void print_results(float the_line_avg[])
 
 main() {
 
+	clock_t begin = clock();
+
 	omp_set_num_threads(NUM_THREADS);
 
 	init_arrays();
@@ -98,6 +100,10 @@ main() {
 
 	print_results(line_avg);
 
-	printf("Main: program completed. Exiting.\n");
+	clock_t end = clock();
+
+	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+
+	printf("Main: program completed. Time spent = %d. Exiting.\n", time_spent);
 }
 
