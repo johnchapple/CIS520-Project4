@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <time.h>//p4 addition
 
 //p4 start
 #define NUM_THREADS 4
