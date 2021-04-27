@@ -1,7 +1,8 @@
-#include <mpi.h>
+#include "mpi.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 //#define NUM_THREADS 4
 int NUM_THREADS;
@@ -11,7 +12,7 @@ int NUM_THREADS;
 
 char line_array[ARRAY_SIZE][STRING_SIZE];
 float line_avg[ARRAY_SIZE];			// count of individual characters
-float local_char_count[ALPHABET_SIZE];
+float local_line_avg[ARRAY_SIZE];
 
 void init_arrays()
 {
@@ -82,6 +83,8 @@ main(int argc, char* argv[])
 	int numtasks, rank;
 	MPI_Status Status;
 
+    clock_t begin = clock();//p4
+
 
 	rc = MPI_Init(&argc,&argv);
 	if (rc != MPI_SUCCESS) {
@@ -110,6 +113,12 @@ main(int argc, char* argv[])
 	if ( rank == 0 ) {
 		print_results();
 	}
+
+    //print the results:
+    print_results(line_avg);
+    clock_t end = clock();
+	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+	printf("Main: program completed. Time spent = %d. Exiting.\n", time_spent);
 
 	MPI_Finalize();
 	return 0;
