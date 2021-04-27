@@ -82,9 +82,6 @@ main(int argc, char* argv[])
 	int numtasks, rank;
 	MPI_Status Status;
 
-    clock_t begin = clock();//p4
-
-
 	rc = MPI_Init(&argc,&argv);
 	if (rc != MPI_SUCCESS) 
     {
@@ -112,12 +109,9 @@ main(int argc, char* argv[])
 
 	if ( rank == 0 ) {
 		print_results(line_avg);
-	}
 
-    //print the results:
-    clock_t end = clock();
-	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-	printf("Main: program completed. Time spent = %d. Exiting.\n", time_spent);
+        printf("Main: program completed. Exiting.\n");
+	}
 
 	MPI_Finalize();
 	return 0;
