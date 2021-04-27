@@ -4,7 +4,7 @@
 #include <string.h>
 
 //p4 start
-#define NUM_THREADS 1
+#define NUM_THREADS 4
 #define ARRAY_SIZE 1000
 #define STRING_SIZE 2001 // no lines larger than 2000 chars
 pthread_mutex_t mutexsum;
