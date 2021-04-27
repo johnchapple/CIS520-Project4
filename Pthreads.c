@@ -15,7 +15,7 @@ float line_avg[ARRAY_SIZE];			// count of individual characters
 
 float find_avg(char* line, int nchars) {
    int i, j;
-   float sum = 0;
+   float sum = 0.0;
 
    for ( i = 0; i < nchars; i++ ) {
       sum += ((int) line[i]);
@@ -48,7 +48,7 @@ void *count_array(void *myID)
 {
   char theChar;
   int i, j, charLoc;
-  int local_line_avg[ARRAY_SIZE];
+  float local_line_avg[ARRAY_SIZE];
 
   int startPos = ((int) myID) * (ARRAY_SIZE / NUM_THREADS);
   int endPos = startPos + (ARRAY_SIZE / NUM_THREADS);
@@ -66,10 +66,10 @@ void *count_array(void *myID)
 					// sum up the partial counts into the global arrays
   pthread_mutex_lock (&mutexsum);
    for ( i = 0; i < ARRAY_SIZE; i++ ) {
-      printf("local_line_avg[i] before: %f", local_line_avg[i]);
-      printf("line_avg[i] before: %f", line_avg[i]);
+      printf("local_line_avg[i] before: %.1f", local_line_avg[i]);
+      printf("line_avg[i] before: %.1f", line_avg[i]);
       line_avg[i] += local_line_avg[i];
-      printf("line_avg[i] after: %f", line_avg[i]);
+      printf("line_avg[i] after: %.f", line_avg[i]);
    }
   pthread_mutex_unlock (&mutexsum);
 
@@ -78,7 +78,7 @@ void *count_array(void *myID)
 
 void print_results(float the_line_avg[])
 {
-  int i,j, total = 0;
+  int i = 0;
 
   					// then print out the totals
   for ( i = 0; i < ARRAY_SIZE; i++ ) {
