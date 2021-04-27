@@ -57,7 +57,7 @@ void *count_array(void *myID)
 
 					// init local count array
   for ( i = 0; i < ARRAY_SIZE; i++ ) {
-  	local_line_avg[i] = 0;
+  	local_line_avg[i] = 0.0;
   }
 					// count up our section of the global array
   for ( i = startPos; i < endPos; i++) {
