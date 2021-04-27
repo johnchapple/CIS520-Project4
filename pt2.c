@@ -110,7 +110,7 @@ main(int argc, char* argv[])
 
 
 	if ( rank == 0 ) {
-		print_results();
+		print_results(line_avg);
 	}
 
     //print the results:
