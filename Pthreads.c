@@ -120,6 +120,6 @@ int main()
 	printf("Main: program completed. Time spent = %d. Exiting.\n", time_spent);
    //p4 end
 
-   fclose( fd );
+   //fclose( fd );//p4
 
 }
