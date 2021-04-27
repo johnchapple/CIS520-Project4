@@ -75,7 +75,6 @@ void print_results(float the_line_avg[])
 	printf("%d: %.1f\n", i, the_line_avg[i]);
   }
 }
-}
 
 main(int argc, char* argv[]) 
 {
