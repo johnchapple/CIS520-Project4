@@ -18,7 +18,6 @@ void init_arrays()
   FILE *fd;
 
    fd = fopen( "/homes/dan/625/wiki_dump.txt", "r" );
-   Console.printf("")
    for ( i = 0; i < ARRAY_SIZE; i++ )  {
       err = fscanf( fd, "%[^\n]\n", line_array[i]);
       if( err == EOF ) break;
