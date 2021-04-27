@@ -9,6 +9,9 @@
 #define STRING_SIZE 16
 #define ALPHABET_SIZE 26
 pthread_mutex_t mutexsum;
+
+char line_array[ARRAY_SIZE][STRING_SIZE];
+float line_avg[ARRAY_SIZE];			// count of individual characters
 //p4 stop
 
 float find_avg(char* line, int nchars) {
@@ -39,7 +42,7 @@ void *count_array(void *myID)
 
 					// init local count array
   for ( i = 0; i < ARRAY_SIZE; i++ ) {
-  	local_live_avg[i] = 0;
+  	local_line_avg[i] = 0;
   }
 					// count up our section of the global array
   for ( i = startPos; i < endPos; i++) {
@@ -47,9 +50,9 @@ void *count_array(void *myID)
   }
 					// sum up the partial counts into the global arrays
   pthread_mutex_lock (&mutexsum);
-  for ( i = 0; i < ALPHABET_SIZE; i++ ) {
-     char_counts[i] += local_char_count[i];
-  }
+   for ( i = 0; i < ARRAY_SIZE; i++ ) {
+      line_avg[i] += local_line_avg[i];
+   }
   pthread_mutex_unlock (&mutexsum);
 
   pthread_exit(NULL);
@@ -71,7 +74,7 @@ int main()
    clock_t begin = clock();//p4
 
    int nlines = 0, maxlines = 1000000;
-   int i, err;
+   int i, err, rc;
    //p4 start
 	pthread_t threads[NUM_THREADS];
 	pthread_attr_t attr;
