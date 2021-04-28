@@ -115,16 +115,19 @@ main(int argc, char* argv[])
 	if ( rank == 0 ) {
 		print_results(line_avg);
 
-        gettimeofday(&t2, NULL);
-        elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; //sec to ms
-	    elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
-	    printf("DATA, %s, %f\n", getenv("SLURM_NTASKS"),  elapsedTime);
+    
+    gettimeofday(&t2, NULL);
+    elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; //sec to ms
+    elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
+    printf("DATA, %s, %f\n", getenv("SLURM_NTASKS"),  elapsedTime);
 
-        printf("Main: program completed. Exiting.\n");
+    printf("Main: program completed. Exiting.\n");
 
-        int help;
-  char command[20] = "./Pthreads";
-  help = system(command);
+    /*
+    int help;
+    char command[20] = "./Pthreads";
+    help = system(command);
+    */
 	}
 
   
