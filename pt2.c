@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
+#include <sys/time.h>
 
 //#define NUM_THREADS 4
 int NUM_THREADS;
@@ -82,6 +82,10 @@ main(int argc, char* argv[])
 	int numtasks, rank;
 	MPI_Status Status;
 
+    struct timeval t1, t2;
+    double elapsedTime;
+    gettimeofday(&t1, NULL);
+
 	rc = MPI_Init(&argc,&argv);
 	if (rc != MPI_SUCCESS) 
     {
@@ -106,6 +110,10 @@ main(int argc, char* argv[])
     //MPI_Reduce(local_char_count, char_counts, ALPHABET_SIZE, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
 	MPI_Reduce(local_line_avg, line_avg, ARRAY_SIZE, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
 
+    gettimeofday(&t2, NULL);
+    elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; //sec to ms
+	elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
+	printf("DATA, %d, %s, %f\n", myVersion, getenv("SLURM_NTASKS"),  elapsedTime);
 
 	if ( rank == 0 ) {
 		print_results(line_avg);
