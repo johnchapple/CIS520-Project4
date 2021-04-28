@@ -4,8 +4,8 @@
 #include <string.h>
 
 //p4 start
-int NUM_THREADS = 4
-int ARRAY_SIZE = 1000
+int NUM_THREADS = 4;
+int ARRAY_SIZE = 1000;
 #define STRING_SIZE 2001 // no lines larger than 2000 chars
 pthread_mutex_t mutexsum;
 
@@ -90,9 +90,9 @@ main(int argc, char* argv[])
 
    int a;
    for (a = 0; a < sizeOf(argv); a++) {
-      printf("%s", argv[a])
+      printf("%s", argv[a]);
    }
-   printf("%d", argc)
+   printf("%d", argc);
 
    //int nlines = 0, maxlines = 1000000;
    int i, j, err, rc;
