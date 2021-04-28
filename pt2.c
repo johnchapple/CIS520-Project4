@@ -89,8 +89,8 @@ main(int argc, char* argv[])
 	rc = MPI_Init(&argc,&argv);
 	if (rc != MPI_SUCCESS) 
     {
-	        printf ("Error starting MPI program. Terminating.\n");
-          MPI_Abort(MPI_COMM_WORLD, rc);
+	    printf ("Error starting MPI program. Terminating.\n");
+        MPI_Abort(MPI_COMM_WORLD, rc);
     }
 
     MPI_Comm_size(MPI_COMM_WORLD,&numtasks);
@@ -119,7 +119,7 @@ main(int argc, char* argv[])
         elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; //sec to ms
 	    elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
 	    printf("DATA, %s, %f\n", getenv("SLURM_NTASKS"),  elapsedTime);
-        
+
         printf("Main: program completed. Exiting.\n");
 	}
 
