@@ -110,14 +110,16 @@ main(int argc, char* argv[])
     //MPI_Reduce(local_char_count, char_counts, ALPHABET_SIZE, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
 	MPI_Reduce(local_line_avg, line_avg, ARRAY_SIZE, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
 
-    gettimeofday(&t2, NULL);
-    elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; //sec to ms
-	elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
-	printf("DATA, %s, %f\n", getenv("SLURM_NTASKS"),  elapsedTime);
+    
 
 	if ( rank == 0 ) {
 		print_results(line_avg);
 
+        gettimeofday(&t2, NULL);
+        elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; //sec to ms
+	    elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
+	    printf("DATA, %s, %f\n", getenv("SLURM_NTASKS"),  elapsedTime);
+        
         printf("Main: program completed. Exiting.\n");
 	}
 
