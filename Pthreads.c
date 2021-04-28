@@ -9,8 +9,7 @@ int ARRAY_SIZE = 1000;
 #define STRING_SIZE 2001 // no lines larger than 2000 chars
 pthread_mutex_t mutexsum;
 
-char line_array[ARRAY_SIZE][STRING_SIZE];
-float line_avg[ARRAY_SIZE];			// count of individual characters
+
 //p4 stop
 
 float find_avg(char* line, int nchars) {
@@ -93,6 +92,9 @@ main(int argc, char* argv[])
       printf("%s", argv[a]);
    }
    printf("%d", argc);
+
+   char line_array[ARRAY_SIZE][STRING_SIZE];
+   float line_avg[ARRAY_SIZE];			// count of individual characters
 
    //int nlines = 0, maxlines = 1000000;
    int i, j, err, rc;
