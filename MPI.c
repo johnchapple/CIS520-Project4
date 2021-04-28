@@ -121,11 +121,13 @@ main(int argc, char* argv[])
 	    printf("DATA, %s, %f\n", getenv("SLURM_NTASKS"),  elapsedTime);
 
         printf("Main: program completed. Exiting.\n");
-	}
 
-  int help;
+        int help;
   char command[20] = "./Pthreads";
   help = system(command);
+	}
+
+  
 
 	MPI_Finalize();
 	return 0;
