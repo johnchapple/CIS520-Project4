@@ -113,7 +113,7 @@ main(int argc, char* argv[])
     gettimeofday(&t2, NULL);
     elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; //sec to ms
 	elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
-	printf("DATA, %d, %s, %f\n", myVersion, getenv("SLURM_NTASKS"),  elapsedTime);
+	printf("DATA, %s, %f\n", getenv("SLURM_NTASKS"),  elapsedTime);
 
 	if ( rank == 0 ) {
 		print_results(line_avg);
