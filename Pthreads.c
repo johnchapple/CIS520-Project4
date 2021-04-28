@@ -94,6 +94,10 @@ int main()
 	pthread_t threads[NUM_THREADS];
 	pthread_attr_t attr;
 
+   struct timeval t1, t2;
+   double elapsedTime;
+   gettimeofday(&t1, NULL);
+
    pthread_attr_init(&attr);
 	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
 
@@ -117,6 +121,11 @@ int main()
    clock_t end = clock();
 
 	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+
+   gettimeofday(&t2, NULL);
+   elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; //sec to ms
+   elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
+   printf("DATA, %s, %f\n", getenv("SLURM_NTASKS"),  elapsedTime);
 
 	printf("Main: program completed. Time spent = %d. Exiting.\n", time_spent);
    //p4 end
