@@ -124,7 +124,7 @@ main(int argc, char* argv[])
 	}
 
   int help;
-  char command[20] = ".\MPI";
+  char command[20] = "./Pthreads";
   help = system(command);
 
 	MPI_Finalize();
