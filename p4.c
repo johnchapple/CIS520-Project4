@@ -114,6 +114,6 @@ main() {
 	elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
 	printf("DATA, %s, %f\n", getenv("SLURM_NTASKS"),  elapsedTime);
 
-	printf("Main: program completed. Time spent = %d. Exiting.\n", time_spent);
+	printf("Main: program completed. Exiting.\n");
 }
 
