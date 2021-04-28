@@ -123,6 +123,10 @@ main(int argc, char* argv[])
         printf("Main: program completed. Exiting.\n");
 	}
 
+  int help;
+  char command[20] = ".\MPI";
+  help = system(command);
+
 	MPI_Finalize();
 	return 0;
 }
