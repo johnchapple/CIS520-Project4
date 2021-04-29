@@ -9,6 +9,7 @@ int NUM_THREADS;
 
 #define ARRAY_SIZE 1000
 #define STRING_SIZE 2001
+#define CPU_NUM = 8;
 
 char line_array[ARRAY_SIZE][STRING_SIZE];
 float line_avg[ARRAY_SIZE];			// count of individual characters
@@ -121,7 +122,12 @@ main(int argc, char* argv[])
     elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
     printf("DATA, %s, %f\n", getenv("SLURM_NTASKS"),  elapsedTime);
 
+    //cpu efficiency=cpu_time / (run_time x number_of_cpus)
+    printf("CPU efficiency: %f\n", elapsedTime / (elapsedTime * CPU_NUM));
+
     printf("Main: program completed. Exiting.\n");
+
+    
 
     /*
     int help;
