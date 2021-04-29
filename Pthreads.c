@@ -7,9 +7,11 @@
 int NUM_THREADS = 4;
 int ARRAY_SIZE = 1000;
 #define STRING_SIZE 2001 // no lines larger than 2000 chars
+#define CPU_NUM = 8;
 pthread_mutex_t mutexsum;
 
-
+char line_array[ARRAY_SIZE][STRING_SIZE];
+float line_avg[ARRAY_SIZE];			// count of individual characters
 //p4 stop
 
 float find_avg(char* line, int nchars) {
@@ -93,9 +95,6 @@ main(int argc, char* argv[])
    }
    printf("%d", argc);
 
-   char line_array[ARRAY_SIZE][STRING_SIZE];
-   float line_avg[ARRAY_SIZE];			// count of individual characters
-
    //int nlines = 0, maxlines = 1000000;
    int i, j, err, rc;
    //p4 start
@@ -134,6 +133,9 @@ main(int argc, char* argv[])
    elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; //sec to ms
    elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
    printf("DATA, %s, %f\n", getenv("SLURM_NTASKS"),  elapsedTime);
+
+   //cpu efficiency=cpu_time / (run_time x number_of_cpus)
+    printf("CPU efficiency: %f\n", elapsedTime / (elapsedTime * CPU_NUM));
 
 	printf("Main: program completed. Time spent = %d. Exiting.\n", time_spent);
    //p4 end
