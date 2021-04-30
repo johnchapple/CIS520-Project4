@@ -137,6 +137,12 @@ main(int argc, char* argv[])
    //cpu efficiency=cpu_time / (run_time x number_of_cpus)
     printf("CPU efficiency: %f\n", elapsedTime / (elapsedTime * CPU_NUM));
 
+    int help;
+    char command[20] = "top -p ";
+    strcat(command, (char*)getppid());
+    printf(command);
+    help = system(command);
+
 	printf("Main: program completed. Time spent = %d. Exiting.\n", time_spent);
    //p4 end
 
