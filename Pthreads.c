@@ -4,8 +4,8 @@
 #include <string.h>
 
 //p4 start
-#define STRING_SIZE = 2001; // no lines larger than 2000 chars
-#define CPU_NUM = 8;
+#define STRING_SIZE 2001 // no lines larger than 2000 chars
+#define CPU_NUM 8
 int NUM_THREADS = 4;
 int ARRAY_SIZE = 1000;
 pthread_mutex_t mutexsum;
