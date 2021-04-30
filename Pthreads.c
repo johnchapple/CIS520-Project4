@@ -85,7 +85,7 @@ void print_results(float the_line_avg[])
 	printf("%d: %.1f\n", i, the_line_avg[i]);
   }
 }
-//p4 stop
+//p4 stop 
 
 main(int argc, char* argv[]) 
 {
