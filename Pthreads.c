@@ -92,7 +92,7 @@ main(int argc, char* argv[])
    clock_t begin = clock();//p4
 
    int a;
-   for (a = 0; a < sizeOf(argv); a++) {
+   for (a = 0; a < sizeof(argv); a++) {
       printf("%s", argv[a]);
    }
    printf("%d", argc);
