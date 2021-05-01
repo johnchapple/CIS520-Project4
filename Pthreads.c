@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <sys/resource.h>
 
 //p4 start
 #define STRING_SIZE 2001 // no lines larger than 2000 chars
@@ -139,14 +140,21 @@ main(int argc, char* argv[])
    //cpu efficiency=cpu_time / (run_time x number_of_cpus)
     printf("CPU efficiency: %f\n", elapsedTime / (elapsedTime * CPU_NUM));
 
+   /*
     int help;
-    char command[20] = "top"//"top -p ";
+    char command[20] = "top";//"top -p ";
     //printf("%lun",getppid());
     //strcat(command, (char*)getppid());
     //printf(command);
     help = system(command);
+    */
+   /*
+   struct rusage usage;
 
+   printf(getrusage(RUSAGE_SELF, &usage));
 	printf("Main: program completed. Time spent = %d. Exiting.\n", time_spent);
+   */
+   FILE* status = fopen( "/proc/self/status", "r" );
    //p4 end
 
    //fclose( fd );//p4
