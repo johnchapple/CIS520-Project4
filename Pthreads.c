@@ -158,15 +158,15 @@ main(int argc, char* argv[])
    char filename[100], c;
    c = fgetc(status);
    int x = 0;
-    while (c != EOF)
-    {
-       if(x > 6 && x < 10)
-       {
+   while (c != EOF)
+   {
+      if(x > 6 && x < 20)
+      {
          printf ("%c", c);
-       }
-       c = fgetc(status);
+      }
+      c = fgetc(status);
       x++;
-    }
+   }
   
     fclose(status);
    //p4 end
