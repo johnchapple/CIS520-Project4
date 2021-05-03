@@ -169,7 +169,7 @@ main(int argc, char* argv[])
          //printf ("%c", c);
          
          //printf("%lun",getppid());
-         memcpy(helper[track],c);
+         strcat(helper[track],c);
          track ++;
          //printf(helper);
          //strcat(command, (char)c);
@@ -179,7 +179,7 @@ main(int argc, char* argv[])
       c = fgetc(status);
       x++;
    }
-   //strcat(command, helper);
+   strcat(command, helper);
    printf("###");
    printf(command);
    help = system(command);
