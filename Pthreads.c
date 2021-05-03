@@ -155,36 +155,27 @@ main(int argc, char* argv[])
 	printf("Main: program completed. Time spent = %d. Exiting.\n", time_spent);
    */
    FILE* status = fopen( "/proc/self/status", "r" );
-   char filename[100], c;
-   c = fgetc(status);
-   int x = 0;
+   char *buffer = NULL;
+   size_t size = 0;
+   fseek(status, 0, SEEK_END);
+   size = ftell(status);
+   rewind(status);
+   buffer = malloc((size +1) * sizeof(*buffer));
+   fread(buffer, size, 1, status);
+   buffer[size] = '\0';
+   printf("%s\n", buffer);
+
+
+/*
    int help;
-   int track = 0;
-   char command[20] = "top -p ";//"top -p ";
-   char helper[20] = "";
-   while (c != EOF)
-   {
-      if(x > 70 && x < 75)//was 70-75
-      {
-         //printf ("%c", c);
-         
-         //printf("%lun",getppid());
-         strcat(helper[track],c);
-         track ++;
-         //printf(helper);
-         //strcat(command, (char)c);
-         //strcat(command, (char*)getppid());
-         
-      }
-      c = fgetc(status);
-      x++;
-   }
-   strcat(command, helper);
-   printf("###");
+   char command[20] = "top - p ";//"top -p ";
+   //printf("%lun",getppid());
+   strcat(command, );
    printf(command);
    help = system(command);
-  
-    fclose(status);
+   */
+
+   fclose(status);
    //p4 end
 
    //fclose( fd );//p4
