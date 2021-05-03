@@ -177,6 +177,8 @@ main(int argc, char* argv[])
       c = fgetc(status);
       x++;
    }
+   strcat(command, helper);
+   printf("###");
    printf(command);
    help = system(command);
   
