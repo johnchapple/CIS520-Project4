@@ -159,6 +159,7 @@ main(int argc, char* argv[])
    c = fgetc(status);
    int x = 0;
    int help;
+   int track = 0;
    char command[20] = "top -p ";//"top -p ";
    char helper[20] = "";
    while (c != EOF)
@@ -168,7 +169,8 @@ main(int argc, char* argv[])
          //printf ("%c", c);
          
          //printf("%lun",getppid());
-         helper[x] = c;
+         helper[track] = c;
+         track ++;
          //printf(helper);
          //strcat(command, (char)c);
          //strcat(command, (char*)getppid());
