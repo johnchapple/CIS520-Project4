@@ -154,6 +154,7 @@ main(int argc, char* argv[])
    printf(getrusage(RUSAGE_SELF, &usage));
 	printf("Main: program completed. Time spent = %d. Exiting.\n", time_spent);
    */
+  /*
    FILE* status = fopen( "/proc/self/status", "r" );
    char filename[100], c;
    c = fgetc(status);
@@ -187,6 +188,7 @@ main(int argc, char* argv[])
    help = system(command);
   
     fclose(status);
+    */
    //p4 end
 
    //fclose( fd );//p4
