@@ -163,7 +163,7 @@ main(int argc, char* argv[])
    char helper[20] = "";
    while (c != EOF)
    {
-      if(x > 70 && x < 75)
+      if(x > 70 && x < 100)//was 70-75
       {
          //printf ("%c", c);
          
