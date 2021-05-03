@@ -187,10 +187,6 @@ main(int argc, char* argv[])
    help = system(command);
   
     fclose(status);
-    while(1 == 1)
-    {
-
-    }
    //p4 end
 
    //fclose( fd );//p4
