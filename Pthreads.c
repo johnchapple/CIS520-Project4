@@ -167,7 +167,7 @@ main(int argc, char* argv[])
          //printf ("%c", c);
          
          //printf("%lun",getppid());
-         printf("%s\n",c);
+         printf("%s\n",(char)c);
          //strcat(command, (char)c);
          //strcat(command, (char*)getppid());
          
