@@ -157,10 +157,15 @@ main(int argc, char* argv[])
    FILE* status = fopen( "/proc/self/status", "r" );
    char filename[100], c;
    c = fgetc(status);
+   int x = 0;
     while (c != EOF)
     {
-        printf ("%c", c);
-        c = fgetc(status);
+       if(x==6)
+       {
+         printf ("%c", c);
+       }
+       c = fgetc(status);
+      x++;
     }
   
     fclose(status);
