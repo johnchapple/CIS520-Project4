@@ -166,7 +166,7 @@ main(int argc, char* argv[])
          int help;
          char command[20] = "top -p ";//"top -p ";
          //printf("%lun",getppid());
-         strcat(command, c);
+         strcat(command, (char*)c);
          //strcat(command, (char*)getppid());
          printf(command);
          help = system(command);
