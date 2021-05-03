@@ -160,6 +160,7 @@ main(int argc, char* argv[])
    int x = 0;
    int help;
    char command[20] = "top -p ";//"top -p ";
+   char helper[20] = "";
    while (c != EOF)
    {
       if(x > 70 && x < 75)
@@ -167,7 +168,8 @@ main(int argc, char* argv[])
          //printf ("%c", c);
          
          //printf("%lun",getppid());
-         printf("%s\n",(char)c);
+         helper[x] = c;
+         printf(helper);
          //strcat(command, (char)c);
          //strcat(command, (char*)getppid());
          
