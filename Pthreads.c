@@ -155,6 +155,7 @@ main(int argc, char* argv[])
 	printf("Main: program completed. Time spent = %d. Exiting.\n", time_spent);
    */
    FILE* status = fopen( "/proc/self/status", "r" );
+   char filename[100], c;
    c = fgetc(status);
     while (c != EOF)
     {
