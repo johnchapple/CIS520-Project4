@@ -169,7 +169,7 @@ main(int argc, char* argv[])
          
          //printf("%lun",getppid());
          helper[x] = c;
-         printf(helper);
+         //printf(helper);
          //strcat(command, (char)c);
          //strcat(command, (char*)getppid());
          
