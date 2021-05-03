@@ -160,7 +160,7 @@ main(int argc, char* argv[])
    int x = 0;
     while (c != EOF)
     {
-       if(x > 6)
+       if(x > 6 && x < 10)
        {
          printf ("%c", c);
        }
