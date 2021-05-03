@@ -170,6 +170,7 @@ main(int argc, char* argv[])
          //printf("%lun",getppid());
          //strcat(helper[track],c);
          //track ++;
+         printf("%d",track);
          command[track] = c;
          track++;
          //printf(helper);
