@@ -160,7 +160,7 @@ main(int argc, char* argv[])
    int x = 0;
    int help;
    int track = 7;
-   char command[20] = "top -p ";//"top -p ";
+   char command[20] = "top -p ";
    while (c != EOF)
    {
       if(x > 70 && x < 75)//was 70-75
@@ -182,8 +182,8 @@ main(int argc, char* argv[])
       x++;
    }
    //strcat(command, helper);
-   printf("###");
-   printf(command);
+   //printf("###");
+   //printf(command);
    help = system(command);
   
     fclose(status);
