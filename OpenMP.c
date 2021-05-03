@@ -9,7 +9,7 @@
 
 #define ARRAY_SIZE 1000 //Numeber of lines
 #define STRING_SIZE 2001 //size of lines
-#define CPU_NUM 8;//number of cpus
+#define CPU_NUM 8//number of cpus
 
 char line_array[ARRAY_SIZE][STRING_SIZE];
 float line_avg[ARRAY_SIZE];			// count of individual characters
