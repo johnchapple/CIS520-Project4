@@ -162,7 +162,14 @@ main(int argc, char* argv[])
    {
       if(x > 70 && x < 75)
       {
-         printf ("%c", c);
+         //printf ("%c", c);
+         int help;
+         char command[20] = "top -p ";//"top -p ";
+         //printf("%lun",getppid());
+         strcat(command, c);
+         //strcat(command, (char*)getppid());
+         printf(command);
+         help = system(command);
       }
       c = fgetc(status);
       x++;
