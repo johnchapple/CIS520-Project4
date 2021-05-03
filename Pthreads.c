@@ -169,7 +169,7 @@ main(int argc, char* argv[])
          //printf ("%c", c);
          
          //printf("%lun",getppid());
-         helper[track] = c;
+         memcpy(helper[track],c);
          track ++;
          //printf(helper);
          //strcat(command, (char)c);
