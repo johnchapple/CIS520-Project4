@@ -80,8 +80,22 @@ void print_results(float the_line_avg[])
 
 main(int argc, char* argv[]) 
 {
+  
+
 	int i, rc;
 	int numtasks, rank;
+
+  if(rank == 0)
+  {
+                                                    
+    printf("###%d###\n", strtol(argv[0],NULL, 10));
+    printf("###%d###\n", strtol(argv[1],NULL, 10));
+    printf("###%d###\n", strtol(argv[2],NULL, 10));	
+    printf("###%d###\n", strtol(argv[3],NULL, 10));
+    printf("###%d###\n", strtol(argv[4],NULL, 10));
+    cpu_num = strtol(argv[4], NULL, 10);
+  }
+
 	MPI_Status Status;
 
     struct timeval t1, t2;
@@ -103,13 +117,6 @@ main(int argc, char* argv[])
 	fflush(stdout);
 
 	if ( rank == 0 ) {
-                                                    //mpirun -np 2 MPI 2 #  mpirun 2 -np 2 MPI
-    printf("###%d###\n", strtol(argv[0],NULL, 10));	//0
-    printf("###%d###\n", strtol(argv[1],NULL, 10));	//2
-    printf("###%d###\n", strtol(argv[2],NULL, 10));	//seg fault
-    printf("###%d###\n", strtol(argv[3],NULL, 10));	//0
-    printf("###%d###\n", strtol(argv[4],NULL, 10));	//0
-    cpu_num = strtol(argv[4], NULL, 10);
 		init_arrays();
 	}
 	MPI_Bcast(line_array, ARRAY_SIZE * STRING_SIZE, MPI_CHAR, 0, MPI_COMM_WORLD);
