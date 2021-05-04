@@ -103,8 +103,8 @@ main(int argc, char* argv[])
 	fflush(stdout);
 
 	if ( rank == 0 ) {
-    printf("###%d###\n", strtol(argv[3],NULL, 10));	//2
-    cpu_num = strtol(argv[3], NULL, 10);
+    printf("###%d###\n", strtol(argv[4],NULL, 10));	//2
+    cpu_num = strtol(argv[4], NULL, 10);
 		init_arrays();
 	}
 	MPI_Bcast(line_array, ARRAY_SIZE * STRING_SIZE, MPI_CHAR, 0, MPI_COMM_WORLD);
