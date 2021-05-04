@@ -128,7 +128,7 @@ main(int argc, char* argv[])
     printf("DATA, %s, %f\n", getenv("SLURM_NTASKS"),  elapsedTime);
 
     //cpu efficiency=cpu_time / (run_time x number_of_cpus)
-    printf("CPU efficiency: %f\n", elapsedTime / (elapsedTime * CPU_NUM));
+    printf("CPU efficiency: %f\n", elapsedTime / (elapsedTime * cpu_num));
 
     //printf("Main: program completed. Exiting.\n");
 
