@@ -6,12 +6,10 @@
 #SBATCH --ntasks-per-node=4
  
  module purge
- module load OpenMPI
  
  echo "Running OPENMPI on $HOSTNAME"
  
- export OMP_NUM_THREADS=1
- time mpirun -np 2 MPI 
+ time Pthreads
  
  echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
 
