@@ -99,9 +99,11 @@ main(int argc, char* argv[])
    //printf("####\n");
    //printf("%s\n", (char *)argv[1]);		//2
    //printf("%d\n", strtol(argv[1],NULL, 10));	//2
-   cpu_num = strtol(argv[0], NULL, 10);
+
+   // ./Pthreads cpu_num NUM_THREADS
+   cpu_num = strtol(argv[1], NULL, 10);
    printf("cpu_num: %d\n", cpu_num);
-   NUM_THREADS = strtol(argv[1], NULL, 10);//was a static 4
+   NUM_THREADS = strtol(argv[2], NULL, 10);//was a static 4
    printf("num_threads: %d\n", NUM_THREADS);
    //ARRAY_SIZE = strtol(argv[2], NULL, 10);//1000000
    //printf("array_size: %d\n", ARRAY_SIZE);
