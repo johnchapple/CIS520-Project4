@@ -15,3 +15,14 @@
  
  echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
 
+
+ module purge
+ module load OpenMPI
+ 
+ echo "Running OPENMPI on $HOSTNAME"
+ 
+ export OMP_NUM_THREADS=1
+ time mpirun -np 4 MPI 
+ 
+ echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
+
