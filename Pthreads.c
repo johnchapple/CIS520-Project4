@@ -101,7 +101,8 @@ main(int argc, char* argv[])
    //printf("%d\n", strtol(argv[1],NULL, 10));	//2
    cpu_num = strtol(argv[1], NULL, 10);
    NUM_THREADS = strtol(argv[2], NULL, 10);//was a static 4
-   ARRAY_SIZE = strtol(argv[3], NULL, 10);
+   ARRAY_SIZE = strtol(argv[3], NULL, 10);//1000000
+   printf("###cpu_num: %d, num_threads: %d, array_size: %d ###\n",cpu_num, NUM_THREADS, ARRAY_SIZE);
 
    line_array = (char *)malloc(ARRAY_SIZE * STRING_SIZE * sizeof(char));
    line_avg = malloc(sizeof(float)*ARRAY_SIZE);
