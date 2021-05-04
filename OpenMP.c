@@ -8,7 +8,7 @@
 #define NUM_THREADS 1
 
 #define ARRAY_SIZE 1000 //Numeber of lines
-#define STRING_SIZE 2001 //size of lines
+#define STRING_SIZE 2001 //size of lines 
 //#define CPU_NUM 8//number of cpus
 int cpu_num = 0;
 
