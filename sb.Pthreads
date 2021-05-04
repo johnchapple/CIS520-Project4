@@ -9,7 +9,7 @@
  
  echo "Running ./Pthreads on $HOSTNAME"
  
- ./Pthreads
+ ./Pthreads 2
  
  echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
 
