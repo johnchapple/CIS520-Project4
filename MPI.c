@@ -125,7 +125,6 @@ main(int argc, char* argv[])
 
 	if ( rank == 0 ) {
 		print_results(line_avg);
-
     
     gettimeofday(&t2, NULL);
     elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; //sec to ms
@@ -136,8 +135,6 @@ main(int argc, char* argv[])
     printf("CPU efficiency: %f\n", elapsedTime / (elapsedTime * cpu_num));
 
     //printf("Main: program completed. Exiting.\n");
-
-    
 
     /*
     int help;

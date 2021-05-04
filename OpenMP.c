@@ -5,9 +5,10 @@
 #include <time.h>
 #include <sys/time.h>
 
-#define NUM_THREADS 1
+//#define NUM_THREADS 1//changed 5.04.2021 and 4.30pm
+int NUM_THREADS = 0;
 
-#define ARRAY_SIZE 1000 //Numeber of lines
+#define ARRAY_SIZE 1000000 //Numeber of lines
 #define STRING_SIZE 2001 //size of lines 
 //#define CPU_NUM 8//number of cpus
 int cpu_num = 0;
@@ -93,6 +94,8 @@ main(int argc, char* argv[]) {
 
 	//clock_t begin = clock();
 	cpu_num = strtol(argv[1], NULL, 10);
+	NUM_THREADS = strtol(argv[2], NULL, 10);
+
 
 	struct timeval t1, t2;
     double elapsedTime;
