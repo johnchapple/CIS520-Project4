@@ -6,9 +6,28 @@
 #SBATCH --ntasks-per-node=4
 
  module purge
+ module load foss
 
  echo "Running ./OpenMP on $HOSTNAME"
 
- ./OpenMP
+ ./OpenMP 1 1
+
+ echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
+
+  echo "Running ./OpenMP on $HOSTNAME"
+
+ ./OpenMP 1 2
+
+ echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
+
+  echo "Running ./OpenMP on $HOSTNAME"
+
+ ./OpenMP 1 3
+
+ echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
+
+  echo "Running ./OpenMP on $HOSTNAME"
+
+ ./OpenMP 1 4
 
  echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
