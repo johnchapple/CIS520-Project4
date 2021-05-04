@@ -103,7 +103,7 @@ main(int argc, char* argv[])
 	fflush(stdout);
 
 	if ( rank == 0 ) {
-    printf("###%d###\n", strtol(argv[2],NULL, 10));	//2
+    printf("###%d###\n", strtol(argv[3],NULL, 10));	//2
     cpu_num = strtol(argv[2], NULL, 10);
 		init_arrays();
 	}
