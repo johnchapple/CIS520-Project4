@@ -6,7 +6,8 @@
 
 //p4 start
 #define STRING_SIZE 2001 // no lines larger than 2000 chars
-#define CPU_NUM 8
+//#define CPU_NUM 8
+int cpu_num = 0;
 #define ARRAY_SIZE 1000
 int NUM_THREADS = 4;
 //int ARRAY_SIZE = 1000;//was 10.31pm
@@ -90,6 +91,9 @@ void print_results(float the_line_avg[])
 
 main(int argc, char* argv[]) 
 {
+   printf("%d",(int)argv[1]);
+   cpu_num = (int)argv[1];
+
    clock_t begin = clock();//p4
 
    int a;
@@ -138,7 +142,7 @@ main(int argc, char* argv[])
    printf("DATA, %s, %f\n", getenv("SLURM_NTASKS"),  elapsedTime);
 
    //cpu efficiency=cpu_time / (run_time x number_of_cpus)
-   printf("CPU efficiency: %f\n", elapsedTime / (elapsedTime * CPU_NUM));
+   printf("CPU efficiency: %f\n", elapsedTime / (elapsedTime * cpu_num));
 
    /*
     int help;
