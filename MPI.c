@@ -103,7 +103,11 @@ main(int argc, char* argv[])
 	fflush(stdout);
 
 	if ( rank == 0 ) {
-    printf("###%d###\n", strtol(argv[4],NULL, 10));	//2
+    printf("###%d###\n", strtol(argv[0],NULL, 10));	
+    printf("###%d###\n", strtol(argv[1],NULL, 10));	
+    printf("###%d###\n", strtol(argv[2],NULL, 10));	
+    printf("###%d###\n", strtol(argv[3],NULL, 10));	
+    printf("###%d###\n", strtol(argv[4],NULL, 10));	
     cpu_num = strtol(argv[4], NULL, 10);
 		init_arrays();
 	}
@@ -111,7 +115,7 @@ main(int argc, char* argv[])
 		
 	count_array(&rank);
 
-    //MPI_Reduce(local_char_count, char_counts, ALPHABET_SIZE, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
+  //MPI_Reduce(local_char_count, char_counts, ALPHABET_SIZE, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
 	MPI_Reduce(local_line_avg, line_avg, ARRAY_SIZE, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
 
     
