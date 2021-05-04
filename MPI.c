@@ -11,6 +11,7 @@ int NUM_THREADS;
 #define STRING_SIZE 2001
 //#define CPU_NUM 8
 int cpu_num = 0;
+int set = 0;//helps to initialize the cpu_num
 
 char line_array[ARRAY_SIZE][STRING_SIZE];
 float line_avg[ARRAY_SIZE];			// count of individual characters
@@ -80,21 +81,19 @@ void print_results(float the_line_avg[])
 
 main(int argc, char* argv[]) 
 {
-  
 
 	int i, rc;
 	int numtasks, rank;
-
-  if(rank == 0)
-  {
+  //if(0 != strtol(argv[3],NULL, 10))
+  //{
                                                     
     printf("###%d###\n", strtol(argv[0],NULL, 10));
     printf("###%d###\n", strtol(argv[1],NULL, 10));
-    printf("###%d###\n", strtol(argv[2],NULL, 10));	
+    //printf("###%d###\n", strtol(argv[2],NULL, 10));	
     printf("###%d###\n", strtol(argv[3],NULL, 10));
     printf("###%d###\n", strtol(argv[4],NULL, 10));
     cpu_num = strtol(argv[4], NULL, 10);
-  }
+ // }
 
 	MPI_Status Status;
 
