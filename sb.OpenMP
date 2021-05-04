@@ -4,12 +4,11 @@
 #SBATCH --job-name=Pthreads
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=4
- 
- module purge
- 
- echo "Running ./Pthreads on $HOSTNAME"
- 
- ./Pthreads
- 
- echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
 
+ module purge
+
+ echo "Running ./OpenMP on $HOSTNAME"
+
+ ./OpenMP
+
+ echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
