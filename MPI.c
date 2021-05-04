@@ -80,10 +80,6 @@ void print_results(float the_line_avg[])
 
 main(int argc, char* argv[]) 
 {
-
-  printf("###%d###\n", strtol(argv[2],NULL, 10));	//2
-  cpu_num = strtol(argv[2], NULL, 10);
-
 	int i, rc;
 	int numtasks, rank;
 	MPI_Status Status;
@@ -107,6 +103,8 @@ main(int argc, char* argv[])
 	fflush(stdout);
 
 	if ( rank == 0 ) {
+    printf("###%d###\n", strtol(argv[2],NULL, 10));	//2
+    cpu_num = strtol(argv[2], NULL, 10);
 		init_arrays();
 	}
 	MPI_Bcast(line_array, ARRAY_SIZE * STRING_SIZE, MPI_CHAR, 0, MPI_COMM_WORLD);

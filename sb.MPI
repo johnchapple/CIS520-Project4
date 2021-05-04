@@ -11,21 +11,21 @@
  echo "Running OPENMPI on $HOSTNAME"
  
  export OMP_NUM_THREADS=1
- time mpirun -np 2 2 MPI 
+ time mpirun -np 2 MPI 
  
  echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
 
   echo "Running OPENMPI on $HOSTNAME"
  
  export OMP_NUM_THREADS=1
- time mpirun -np 3 2 MPI 
+ time mpirun -np 3 MPI 
  
  echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
  
  echo "Running OPENMPI on $HOSTNAME"
  
  export OMP_NUM_THREADS=1
- time mpirun -np 4 2 MPI 
+ time mpirun -np 4 MPI 
  
  echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
 
