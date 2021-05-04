@@ -106,9 +106,9 @@ main(int argc, char* argv[])
     //mpirun -np 2 MPI 2
     printf("###%d###\n", strtol(argv[0],NULL, 10));	//0
     printf("###%d###\n", strtol(argv[1],NULL, 10));	//2
-    //printf("###%d###\n", strtol(argv[2],NULL, 10));	//seg fault
-    printf("###%d###\n", strtol(argv[3],NULL, 10));	
-    printf("###%d###\n", strtol(argv[4],NULL, 10));	
+    printf("###%d###\n", strtol(argv[2],NULL, 10));	//seg fault
+    //printf("###%d###\n", strtol(argv[3],NULL, 10));	//0
+    //printf("###%d###\n", strtol(argv[4],NULL, 10));	//0
     cpu_num = strtol(argv[4], NULL, 10);
 		init_arrays();
 	}
