@@ -11,7 +11,7 @@
  echo "Running OPENMPI on $HOSTNAME"
  
  export OMP_NUM_THREADS=1
- time mpirun -np 2 MPI #-x OMP_NUM_THREADS=1 gmx_mpi mdrun -nsteps 500000 -ntomp 1 -v -deffnm 1ns -c 1ns.pdb -nice 0
+ time mpirun -np 2 MPI 
  
  echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
 
