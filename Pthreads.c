@@ -5,21 +5,21 @@
 #include <sys/resource.h>
 
 //p4 start
-//#define STRING_SIZE 2001 // no lines larger than 2000 chars
-int STRING_SIZE = 2001;
+#define STRING_SIZE 2001 // no lines larger than 2000 chars
+//int STRING_SIZE = 2001;
 //#define CPU_NUM 8
 int cpu_num = 0;
-//#define ARRAY_SIZE 1000000//was 1000
-int ARRAY_SIZE = 0;
+#define ARRAY_SIZE 1000000//was 1000
+//int ARRAY_SIZE = 0;
 int NUM_THREADS = 0;
 //int ARRAY_SIZE = 1000;//was 10.31pm
 
 pthread_mutex_t mutexsum;
 
-//char line_array[ARRAY_SIZE][STRING_SIZE];
-//float line_avg[ARRAY_SIZE];			// count of individual characters
-char *line_array;
-float *line_avg;
+char line_array[ARRAY_SIZE][STRING_SIZE];
+float line_avg[ARRAY_SIZE];			// count of individual characters
+//char *line_array;
+//float *line_avg;
 
 //p4 stop
 
@@ -106,8 +106,8 @@ main(int argc, char* argv[])
    ARRAY_SIZE = strtol(argv[2], NULL, 10);//1000000
    printf("array_size: %d\n", ARRAY_SIZE);
 
-   line_array = (char *)malloc(ARRAY_SIZE * STRING_SIZE * sizeof(char));
-   line_avg = malloc(sizeof(float)*ARRAY_SIZE);
+   //line_array = (char *)malloc(ARRAY_SIZE * STRING_SIZE * sizeof(char));
+   //line_avg = malloc(sizeof(float)*ARRAY_SIZE);
 
    //printf("####\n");
 
