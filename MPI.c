@@ -84,16 +84,12 @@ main(int argc, char* argv[])
 
 	int i, rc;
 	int numtasks, rank;
-  //if(0 != strtol(argv[3],NULL, 10))
-  //{
-                                                    
-    printf("###%d###\n", strtol(argv[0],NULL, 10));
-    printf("###%d###\n", strtol(argv[1],NULL, 10));
-    //printf("###%d###\n", strtol(argv[2],NULL, 10));	
-    printf("###%d###\n", strtol(argv[3],NULL, 10));
-    printf("###%d###\n", strtol(argv[4],NULL, 10));
-    cpu_num = strtol(argv[4], NULL, 10);
- // }
+    //mpirun -np 2 MPI 5           
+    //printf("###%d###\n", strtol(argv[0],NULL, 10));
+    //printf("###%d###\n", strtol(argv[1],NULL, 10));//5
+    //printf("###%d###\n", strtol(argv[3],NULL, 10));
+    //printf("###%d###\n", strtol(argv[4],NULL, 10));
+    cpu_num = strtol(argv[1], NULL, 10);
 
 	MPI_Status Status;
 
