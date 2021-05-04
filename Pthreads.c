@@ -103,8 +103,8 @@ main(int argc, char* argv[])
    printf("cpu_num: %d\n", cpu_num);
    NUM_THREADS = strtol(argv[1], NULL, 10);//was a static 4
    printf("num_threads: %d\n", NUM_THREADS);
-   ARRAY_SIZE = strtol(argv[2], NULL, 10);//1000000
-   printf("array_size: %d\n", ARRAY_SIZE);
+   //ARRAY_SIZE = strtol(argv[2], NULL, 10);//1000000
+   //printf("array_size: %d\n", ARRAY_SIZE);
 
    //line_array = (char *)malloc(ARRAY_SIZE * STRING_SIZE * sizeof(char));
    //line_avg = malloc(sizeof(float)*ARRAY_SIZE);
