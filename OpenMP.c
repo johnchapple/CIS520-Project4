@@ -9,7 +9,8 @@
 
 #define ARRAY_SIZE 1000 //Numeber of lines
 #define STRING_SIZE 2001 //size of lines
-#define CPU_NUM 8//number of cpus
+//#define CPU_NUM 8//number of cpus
+int cpu_num = 0;
 
 char line_array[ARRAY_SIZE][STRING_SIZE];
 float line_avg[ARRAY_SIZE];			// count of individual characters
@@ -82,15 +83,16 @@ void print_results(float the_line_avg[])
 {
   int i,j, total = 0;
 
-  					// then print out the totals
+  // then print out the totals
   for ( i = 0; i < ARRAY_SIZE; i++ ) {
 	printf("%d: %.1f\n", i, the_line_avg[i]);
   }
 }
 
-main() {
+main(int argc, char* argv[]) {
 
 	//clock_t begin = clock();
+	cpu_num = strtol(argv[1], NULL, 10);
 
 	struct timeval t1, t2;
     double elapsedTime;

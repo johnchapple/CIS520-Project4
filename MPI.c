@@ -9,7 +9,8 @@ int NUM_THREADS;
 
 #define ARRAY_SIZE 1000
 #define STRING_SIZE 2001
-#define CPU_NUM 8
+//#define CPU_NUM 8
+int cpu_num = 0;
 
 char line_array[ARRAY_SIZE][STRING_SIZE];
 float line_avg[ARRAY_SIZE];			// count of individual characters
@@ -71,7 +72,7 @@ void print_results(float the_line_avg[])
 {
   int i,j, total = 0;
 
-  					// then print out the totals
+  // then print out the totals
   for ( i = 0; i < ARRAY_SIZE; i++ ) {
 	printf("%d: %.1f\n", i, the_line_avg[i]);
   }
@@ -79,6 +80,10 @@ void print_results(float the_line_avg[])
 
 main(int argc, char* argv[]) 
 {
+
+  printf("###%d###\n", strtol(argv[2],NULL, 10));	//2
+  cpu_num = strtol(argv[2], NULL, 10);
+
 	int i, rc;
 	int numtasks, rank;
 	MPI_Status Status;

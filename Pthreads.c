@@ -91,11 +91,11 @@ void print_results(float the_line_avg[])
 
 main(int argc, char* argv[]) 
 {
-   printf("####\n");
-   printf("%s\n", (char *)argv[1]);		//2
-   printf("%d\n", strtol(argv[1],NULL, 10));	//2
+   //printf("####\n");
+   //printf("%s\n", (char *)argv[1]);		//2
+   //printf("%d\n", strtol(argv[1],NULL, 10));	//2
    cpu_num = strtol(argv[1], NULL, 10);
-   printf("####\n");
+   //printf("####\n");
 
    clock_t begin = clock();//p4
 
