@@ -8,8 +8,9 @@
 #define STRING_SIZE 2001 // no lines larger than 2000 chars
 //#define CPU_NUM 8
 int cpu_num = 0;
-#define ARRAY_SIZE 1000
-int NUM_THREADS = 4;
+//#define ARRAY_SIZE 1000000//was 1000
+int ARRAY_SIZE = 1000000;
+int NUM_THREADS = 0;
 //int ARRAY_SIZE = 1000;//was 10.31pm
 
 pthread_mutex_t mutexsum;
@@ -95,6 +96,9 @@ main(int argc, char* argv[])
    //printf("%s\n", (char *)argv[1]);		//2
    //printf("%d\n", strtol(argv[1],NULL, 10));	//2
    cpu_num = strtol(argv[1], NULL, 10);
+   NUM_THREADS = strtol(argv[2], NULL, 10);//was a static 4
+   ARRAY_SIZE = strtol(argv[3], NULL, 10);
+
    //printf("####\n");
 
    clock_t begin = clock();//p4
