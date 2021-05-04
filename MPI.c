@@ -104,7 +104,7 @@ main(int argc, char* argv[])
 
 	if ( rank == 0 ) {
     printf("###%d###\n", strtol(argv[3],NULL, 10));	//2
-    cpu_num = strtol(argv[2], NULL, 10);
+    cpu_num = strtol(argv[3], NULL, 10);
 		init_arrays();
 	}
 	MPI_Bcast(line_array, ARRAY_SIZE * STRING_SIZE, MPI_CHAR, 0, MPI_COMM_WORLD);
