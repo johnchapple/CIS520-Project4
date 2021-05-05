@@ -7,7 +7,7 @@
 //#define NUM_THREADS 4
 int NUM_THREADS;
 
-#define ARRAY_SIZE 1000
+#define ARRAY_SIZE 1000000
 #define STRING_SIZE 2001
 //#define CPU_NUM 8
 int cpu_num = 0;
