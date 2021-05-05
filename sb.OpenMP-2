@@ -1,0 +1,33 @@
+#!/bin/sh
+#SBATCH --mem=120G
+#SBATCH --time=24:00:00
+#SBATCH --job-name=Pthreads
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=2
+
+ module purge
+ module load foss
+
+ echo "Running ./OpenMP on $HOSTNAME"
+
+ ./OpenMP 2 1
+
+ echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
+
+  echo "Running ./OpenMP on $HOSTNAME"
+
+ ./OpenMP 2 2
+
+ echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
+
+  echo "Running ./OpenMP on $HOSTNAME"
+
+ ./OpenMP 2 3
+
+ echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
+
+  echo "Running ./OpenMP on $HOSTNAME"
+
+ ./OpenMP 2 4
+
+ echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"

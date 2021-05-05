@@ -3,31 +3,31 @@
 #SBATCH --time=24:00:00
 #SBATCH --job-name=Pthreads
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=4
+#SBATCH --ntasks-per-node=3
 
  module purge
  module load foss
 
  echo "Running ./OpenMP on $HOSTNAME"
 
- ./OpenMP 1 1
+ ./OpenMP 3 1
 
  echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
 
   echo "Running ./OpenMP on $HOSTNAME"
 
- ./OpenMP 1 2
+ ./OpenMP 3 2
 
  echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
 
   echo "Running ./OpenMP on $HOSTNAME"
 
- ./OpenMP 1 3
+ ./OpenMP 3 3
 
  echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"
 
   echo "Running ./OpenMP on $HOSTNAME"
 
- ./OpenMP 1 4
+ ./OpenMP 3 4
 
  echo "Finished run on $SLURM_NTASKS $HOSTNAME cores"

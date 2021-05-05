@@ -94,7 +94,9 @@ main(int argc, char* argv[]) {
 
 	//clock_t begin = clock();
 	cpu_num = strtol(argv[1], NULL, 10);
+	printf("cpu_num: %d\n", cpu_num);
 	NUM_THREADS = strtol(argv[2], NULL, 10);
+	printf("num_threads: %d\n", NUM_THREADS);
 
 
 	struct timeval t1, t2;
