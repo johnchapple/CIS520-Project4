@@ -1,2 +1,2 @@
-run: OpenMP
+run : OpenMP
     ./OpenMP

@@ -1,2 +1,2 @@
-run: MPI
-    ./MPI
+run : MPI
+	./MPI
