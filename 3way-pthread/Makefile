@@ -1,0 +1,2 @@
+run: Pthreads
+    ./Pthreads

@@ -1,0 +1,2 @@
+run: OpenMP
+    ./OpenMP
