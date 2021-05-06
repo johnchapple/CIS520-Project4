@@ -1,3 +1,3 @@
 run : MPI
 	module load foss
-	mpirun -np MPI
+	mpirun -np 1 MPI 1
